@@ -11,7 +11,6 @@ module.exports = {
     res.end(challenge['hub.challenge']);
   },
   'POST /facebook': (req, res) => {
-    console.log(req);
     utils.parseBody(req, (err,payload) => {
       if(err) {
         console.log('err',err);

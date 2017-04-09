@@ -19,6 +19,7 @@ module.exports = {
       }
       console.log('JSON.stringify(payload)',JSON.stringify(payload));
       res.end("alaaa");
-    }
+    });
+  }
 
 };

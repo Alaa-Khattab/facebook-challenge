@@ -3,7 +3,27 @@ var utils = require('../assest/utils.js');
  function sendReply (userID,cb){
 var postData = JSON.stringify({
   recipient:{id:userID},
-  message:{text:"You are welcome"}
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"Do you want to get challenge or create chellange for others?",
+        "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://petersapparel.parseapp.com",
+            "title":"Get Challenge"
+          },
+          {
+            "type":"postback",
+            "title":"Create Challenge",
+            "payload":"USER_DEFINED_PAYLOAD"
+          }
+        ]
+      }
+    }
+  }
 });
 
 var opts = {

@@ -12,6 +12,7 @@ module.exports = (req, res) => {
     var message = payload.entry[0].messaging[0].message.text;
     console.log('User ID :', senderID);
     console.log('message :', message);
+    console.log('IM in POST route');
     if (message === 'start') {
       correct.sendReply(senderID,(err)=>{
         res.end('CORRECT')

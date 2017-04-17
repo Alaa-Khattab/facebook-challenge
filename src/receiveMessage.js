@@ -12,10 +12,7 @@ module.exports = (req, res) => {
     var senderID = payload.entry[0].messaging[0].sender.id;
     var message = payload.entry[0].messaging[0].message.text;
     var postback = payload.entry[0].messaging[0].postback
-    console.log('User ID :', senderID);
-    console.log('message :', message);
-    console.log('postback:', postback);
-    console.log('payload',JSON.stringify(payload));
+    console.log('PAYLOAD',JSON.stringify(payload));
 
     console.log('IM in POST route');
     if (message === 'start') {

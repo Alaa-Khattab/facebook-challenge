@@ -1,6 +1,6 @@
 var https = require('https');
 var utils = require('../assest/utils.js');
- function sendReply (userID,cb){
+ function sendReply (userID){
 var postData = JSON.stringify({
   recipient:{id:userID},
   "message":{
@@ -44,8 +44,7 @@ var req = https.request(opts, (res) => {
     console.log('body',body);
   });
 });
-cb(undefined)
 req.write(postData);
 req.end();
 }
-module.exports =  {sendReply:sendReply} 
+module.exports =  {sendReply:sendReply}

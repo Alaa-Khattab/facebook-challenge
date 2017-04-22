@@ -17,3 +17,4 @@ function receivedMessage(event){
     message.sendTextMessage(senderID, 'Message with attachment received');
   }
 }
+module.exports={receivedMessage:receivedMessage}

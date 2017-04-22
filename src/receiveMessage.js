@@ -1,34 +1,21 @@
-var utils = require('../assest/utils.js');
-var correct = require('./sendReply.js');
-var wrong = require('./wrongMessage.js');
-var create = require('./createChallenge.js')
+ require('./sendReply.js');
+require('./sendTextMessage.js');
 
-module.exports = (req, res) => {
-  utils.parseBody(req, (err, payload) => {
-    if (err) {
-      console.log('err', err);
-      return res.end('Error');
+function receivedMessage(event){
+   var senderID = event.sender.id;
+    var message = event.message;
+     var messageText = message.text;
+     switch (messageText) {
+      case 'start':
+        sendReply(senderID);
+        break;
+
+      default:
+        sendTextMessage(senderID,'انتا قاعد بتتخوث, اكتب زي الخلق وانهي...');
     }
-    var senderID = payload.entry[0].messaging[0].sender.id;
-    //var message = payload.entry[0].messaging[0].message.text;
-    var postback = payload.entry[0].messaging[0].postback
-    console.log('PAYLOAD',JSON.stringify(payload));
+  } else if (messageAttachments) {
+    sendTextMessage(senderID, "Message with attachment received");
+  }
+}
 
-    console.log('IM in POST route');
-    if (payload.entry[0].messaging[0].message.text === 'start') {
-      correct.sendReply(senderID, (err) => {
-        res.end('CORRECT')
-      })
-    } else if (postback === 'Create Challenge') {
-      create.createChallenge(userID, (err) => {
-        res.end();
-      })
-    } else {
-      wrong.wrongMessage(senderID, (err) => {
-        res.end('WRONG')
-
-      })
-
-    }
-  });
 }

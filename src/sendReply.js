@@ -12,7 +12,7 @@ var postData = JSON.stringify({
         "buttons":[
           {
             "type":"web_url",
-            "url":"https://petersapparel.parseapp.com",
+            "url":"https://facebook-challenge.herokuapp.com/",
             "title":"Get Challenge"
           },
           {
@@ -48,6 +48,4 @@ cb(undefined)
 req.write(postData);
 req.end();
 }
-module.exports = {
-  sendReply : sendReply
-}
+module.exports =  sendReply 

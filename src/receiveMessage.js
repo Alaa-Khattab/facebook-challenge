@@ -11,6 +11,7 @@
      switch (messageText) {
        case 'start':
          reply.sendReply(senderID);
+         break;
        default:
          send.sendTextMessage(senderID, 'انتا قاعد بتتخوث, اكتب زي الخلق وانهي...');
      }

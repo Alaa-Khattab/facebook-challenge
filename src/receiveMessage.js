@@ -10,12 +10,12 @@ module.exports = (req, res) => {
       return res.end('Error');
     }
     var senderID = payload.entry[0].messaging[0].sender.id;
-    var message = payload.entry[0].messaging[0].message.text;
+    //var message = payload.entry[0].messaging[0].message.text;
     var postback = payload.entry[0].messaging[0].postback
     console.log('PAYLOAD',JSON.stringify(payload));
 
     console.log('IM in POST route');
-    if (message === 'start') {
+    if (payload.entry[0].messaging[0].message.text === 'start') {
       correct.sendReply(senderID, (err) => {
         res.end('CORRECT')
       })

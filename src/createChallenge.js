@@ -9,7 +9,7 @@ var postData = JSON.stringify({
 var opts = {
   hostname: 'graph.facebook.com',
   port: 443,
-  path: `/v2.6/me/messages?access_token=EAACDfeAHkZCEBAGoOXEZBac3sn4ZCDrrXUYRI7a5d9tJqsMi12diZC5Fsy68ndMZBzQ301RVggPKyUQCotZBsQMbOVCfCVyQlhZCXmx042I0vp5eU9rabUwZAFNLUDjejx5O5GNsAGDTKlIxLsWUZCZC4ADa2s1CtiA8qrmwdWQeJ8qgZDZD`,
+  path: `/v2.6/me/messages?access_token=EAASeNQVU8NsBAJlsLCoIOPFScZBW9KZAMktoZByoBDtUMtdgFJu5gmujpvUiS5pJnz7PQVZCr2wyyhNEFQe1EBVGgyu8x0kB1k5oipqsAhFZAceDWEmGqYZAyHi1dWccl3JeaZBP5dumIbdZBWyrel8Qk745aD3VZAjSxZBVnxjWKwQAZDZD`,
   method: 'POST',
   headers: {'Content-Type': 'application/json'}
 };

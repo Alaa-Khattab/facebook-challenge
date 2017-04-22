@@ -10,7 +10,7 @@ module.exports = (req, res) => {
     }
     console.log('payload.entry',payload.entry);
     payload.entry.forEach(function(entry) {
-      console.log('entry',entry);
+      console.log('entry WWWW:',payload.entry.messaging[0]);
       var pageID = entry.id;
       var timeOfEvent = entry.time;
       entry.messaging.forEach(function(event) {

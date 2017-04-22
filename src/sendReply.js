@@ -1,6 +1,6 @@
 var https = require('https');
 var utils = require('../assest/utils.js');
- function sendReply (userID){
+ function sendReply (userID,cb){
 var postData = JSON.stringify({
   recipient:{id:userID},
   "message":{
@@ -25,7 +25,6 @@ var postData = JSON.stringify({
     }
   }
 });
-
 var opts = {
   hostname: 'graph.facebook.com',
   port: 443,
@@ -40,10 +39,10 @@ var req = https.request(opts, (res) => {
       console.log('err',err);
       return res.end();
     }
-
-    console.log('body',body);
+    //console.log('body',body);
   });
 });
+cb(undefined)
 req.write(postData);
 req.end();
 }

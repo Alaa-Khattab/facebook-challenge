@@ -1,6 +1,6 @@
 var https = require('https');
 var utils = require('../assest/utils.js');
-function sendTextMessage (userID,message){
+function sendTextMessage (userID,message,cb){
 var postData = JSON.stringify({
   recipient:{id:userID},
   message:{text:message}
@@ -24,6 +24,7 @@ var req = https.request(opts, (res) => {
     console.log('body',body);
   });
 });
+cb(undefined)
 req.write(postData);
 req.end();
 }

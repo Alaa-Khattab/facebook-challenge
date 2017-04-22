@@ -1,5 +1,5 @@
  const reply = require('./sendReply.js');
- const message = require('./sendTextMessage.js');
+ require('./sendTextMessage.js');
 
  function receivedMessage(event) {
    var senderID = event.sender.id;
@@ -12,10 +12,10 @@
        case 'start':
          reply.sendReply(senderID);
        default:
-         message.sendTextMessage(senderID, 'انتا قاعد بتتخوث, اكتب زي الخلق وانهي...');
+         sendTextMessage(senderID, 'انتا قاعد بتتخوث, اكتب زي الخلق وانهي...');
      }
    } else if (messageAttachments) {
-     message.sendTextMessage(senderID, 'Message with attachment received');
+     sendTextMessage(senderID, 'Message with attachment received');
    }
  }
  module.exports = {

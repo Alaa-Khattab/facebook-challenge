@@ -10,21 +10,21 @@ module.exports = (req, res) => {
     }
     console.log('payload.entry',payload.entry);
     payload.entry.forEach(function(entry) {
+      console.log('entry',entry);
       var pageID = entry.id;
       var timeOfEvent = entry.time;
       entry.messaging.forEach(function(event) {
-        console.log('event',event);
         if (event.message) {
           console.log('event.message',event.message);
           receive.receivedMessage(event,(err)=>{
             console.log(err);
           });
         } else if (event.postback) {
-          console.log('event.message',event.message);
           post.receivedPostback(event,(err)=>{
             console.log(err);
           });
         } else {
+          console.log();
           console.log("Webhook received unknown event: ", event);
         }
       })

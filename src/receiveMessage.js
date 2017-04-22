@@ -6,7 +6,7 @@
    var message = event.message;
    var messageAttachments = message.attachments;
    var messageText = message.text;
-   console.log('message at trcivedMSG', message);
+   console.log('message at trcivedMSG', messageText);
    if (messageText) {
      switch (messageText) {
        case 'start':

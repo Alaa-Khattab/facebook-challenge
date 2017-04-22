@@ -19,6 +19,7 @@ module.exports = (req, res) => {
           console.log('event.message',event.message);
           receive.receivedMessage(event);
         } else if (event.postback) {
+          console.log('event.message',event.message);
           post.receivedPostback(event);
         } else {
           console.log("Webhook received unknown event: ", event);

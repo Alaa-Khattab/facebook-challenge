@@ -1,5 +1,6 @@
 var https = require('https');
 var utils = require('../assest/utils.js');
+require('env2')('../.env');
 function createChallenge (userID,cb){
 var postData = JSON.stringify({
   recipient:{id:userID},
@@ -9,7 +10,7 @@ var postData = JSON.stringify({
 var opts = {
   hostname: 'graph.facebook.com',
   port: 443,
-  path: `/v2.6/me/messages?access_token=EAASeNQVU8NsBAJlsLCoIOPFScZBW9KZAMktoZByoBDtUMtdgFJu5gmujpvUiS5pJnz7PQVZCr2wyyhNEFQe1EBVGgyu8x0kB1k5oipqsAhFZAceDWEmGqYZAyHi1dWccl3JeaZBP5dumIbdZBWyrel8Qk745aD3VZAjSxZBVnxjWKwQAZDZD`,
+  path: `/v2.6/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`,
   method: 'POST',
   headers: {'Content-Type': 'application/json'}
 };

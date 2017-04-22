@@ -1,6 +1,6 @@
 var https = require('https');
 var utils = require('../assest/utils.js');
-require('env2')('../.env');
+//require('env2')('../.env');
 function createChallenge (userID,cb){
 var postData = JSON.stringify({
   recipient:{id:userID},

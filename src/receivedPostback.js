@@ -8,4 +8,4 @@ function receivedPostback(event) {
     "at %d", senderID, recipientID, payload, timeOfPostback);
   sendTextMessage(senderID, "Postback called");
 }
-module.exports=receivedPostback
+module.exports={receivedPostback:receivedPostback}

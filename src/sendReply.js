@@ -48,4 +48,4 @@ cb(undefined)
 req.write(postData);
 req.end();
 }
-module.exports =  sendReply 
+module.exports =  {sendReply:sendReply} 

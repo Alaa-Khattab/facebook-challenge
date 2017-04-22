@@ -9,13 +9,14 @@ module.exports = (req, res) => {
       console.log('err', err);
       return res.end('Error');
     }
+    console.log('payload.entry',payload.entry);
     payload.entry.forEach(function(entry) {
       var pageID = entry.id;
       var timeOfEvent = entry.time;
-
-      // Iterate over each messaging event
       entry.messaging.forEach(function(event) {
+        console.log('event',event);
         if (event.message) {
+          console.log('event.message',event.message);
           receive.receivedMessage(event);
         } else if (event.postback) {
           post.receivedPostback(event);

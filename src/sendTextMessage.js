@@ -29,4 +29,4 @@ cb(undefined)
 req.write(postData);
 req.end();
 }
-module.exports = sendTextMessage
+module.exports = {sendTextMessage:sendTextMessage}

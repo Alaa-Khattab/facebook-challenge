@@ -1,5 +1,5 @@
- require('./sendReply.js');
-require('./sendTextMessage.js');
+ const reply=require('./sendReply.js');
+const message=require('./sendTextMessage.js');
 
 function receivedMessage(event){
    var senderID = event.sender.id;
@@ -8,12 +8,12 @@ function receivedMessage(event){
      if(messageText){
      switch (messageText) {
       case 'start':
-        sendReply(senderID);
+        reply.sendReply(senderID);
         break;
       default:
-        sendTextMessage(senderID,'انتا قاعد بتتخوث, اكتب زي الخلق وانهي...');
+        message.sendTextMessage(senderID,'انتا قاعد بتتخوث, اكتب زي الخلق وانهي...');
     }
   } else if (messageAttachments) {
-    sendTextMessage(senderID, "Message with attachment received");
+    message.sendTextMessage(senderID, 'Message with attachment received');
   }
 }

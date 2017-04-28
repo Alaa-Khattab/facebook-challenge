@@ -39,7 +39,6 @@ var req = https.request(opts, (res) => {
       console.log('err',err);
       return res.end();
     }
-    //console.log('body',body);
   });
 });
 cb(undefined)
